@@ -37,6 +37,9 @@ public class GenericClient : BaseClient, IWebhookClient<GenericOption>
     {
         try
         {
+            // Add delay of 2 seconds
+            await Task.Delay(2000).ConfigureAwait(false);
+
             if (!SendWebhook(_logger, option, data))
             {
                 return;
